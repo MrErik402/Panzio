@@ -1,0 +1,45 @@
+body{
+    color:blue;
+}
+.baloldal{
+    float: left;
+    margin-left: 20px;
+}
+.jobboldal{
+    margin: 10px;
+    padding: 10px;
+    margin-left: 40%;
+}
+input[type="text"]
+{
+    width: 30px;
+}
+main{
+    background-color: gray;
+    margin: 0 auto;
+    width: 75%;
+}
+textarea{
+    width: 70%;
+    height: 150px;
+}
+hr{
+    margin: 0 auto;
+    width: 90%;
+}
+h1{
+    text-align: center; 
+}
+button{
+    margin-bottom: 15px;
+}
+@media screen and (max-width:650px) {
+    main{
+        width: 100%;
+    }
+}
+@media screen and (max-width:490px) {
+    .jobboldal{
+        margin-left: 35%;
+    }
+}

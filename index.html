@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Panzió</title>
+</head>
+<body>
+    <main>
+        <h1 id="cim">Panzió - Szobafoglalás</h1>
+        <div class="erkezes">
+            <hr>
+            <p class="baloldal">
+                Érkezés dátuma:
+                <br> 
+                Távozás dátuma:
+            </p>
+            <p class="jobboldal">
+                <input type="date" name="erkezes" id="erkezes">
+                <br>
+                <input type="date" name="tavozas" id="tavozas">
+            </p>
+            <hr>
+        <div class="szoba">
+            <p class="baloldal">
+                Szoba típusa:
+            </p>
+            
+                <form class="jobboldal" id="szoba">
+                    <input type="radio" name="agyak" id="egyagy" value="9000">
+                    <label for="egyagy">Egyágyas - 9.000 Ft/éj</label>
+                    <br>
+
+                    <input type="radio" name="agyak" id="ketagy" value="15000">
+                    <label for="ketagy">Kétágyas - 15.000 Ft/éj</label>
+                    <br>
+
+                    <input type="radio" name="agyak" id="ketegypot" value="18000">
+                    <label for="ketegypot">Kétágyas 1 pótággyal - 18.000 Ft/éj</label>
+                    <br>
+
+                    <input type="radio" name="agyak" id="ketketpot" value="21000">
+                    <label for="ketketpot">Kétágyas 2 pótággyal - 21.000 Ft/éj</label>
+                </form>
+            
+        </div>
+        <div class="vendegek">
+            <hr>
+            <p class="baloldal">
+                Vendégek száma:
+                <br>
+                Vendégek életkora:
+            </p>
+            <p class="jobboldal">
+                <select name="fovalaszto" id="fovalaszto">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select> fő
+                <br>
+                <input type="text" name="fo1" id="fo1"> év
+                <input type="text" name="fo2" id="fo2"> év
+                <input type="text" name="fo3" id="fo3"> év
+                <input type="text" name="fo4" id="fo4"> év
+            </p>
+            <hr>
+        </div>
+        <div class="ellatas">
+            <p class="baloldal">Ellátás:</p>
+            <form class="jobboldal">
+                <input type="radio" name="ellatas" id="reggeli" value="900">
+                <label for="reggeli">Reggeli - 900 Ft/nap/fő</label>
+                <br>
+                <input type="radio" name="ellatas" id="felpanz" value="2900">
+                <label for="felpanz">Félpanzió - 2.900 Ft/nap/fő</label>
+                <br>
+                <input type="radio" name="ellatas" id="teljespanz" value="4900">
+                <label for="teljespanz">Teljes panzíó - 4.900 Ft/nap/fő</label>
+            </form>
+            <hr>
+        </div>
+        <div class="furdo">
+            <p class="baloldal">Fürdő szolgáltatások:</p>
+            <form class="jobboldal">
+                <input type="checkbox" name="furdobelteri" id="belter" value="800">
+                <label for="belter">Beltéri medencék - 800 Ft/nap/fő</label><br>
+                <input type="checkbox" name="furdkulteri" id="kulter" value="800">
+                <label for="kulter">Kültéri medencék - 800 Ft/nap/fő</label><br>
+                <input type="checkbox" name="furdoszauna" id="szauna" value="800">
+                <label for="szauna">Szauna belépő - 800 Ft/nap/fő</label><br>
+                
+            </form>
+            <hr>
+        </div>
+        <div class="egyeb">
+            <p class="baloldal">Egyéb kérdés, kívánság:</p>
+            <p class="jobboldal"><Textarea></Textarea></p>
+            <hr>
+        </div>
+        </div>
+        <div class="hetedikszekcio">
+            <p style="text-align: center">
+              <button onclick="Koltsegszamitas()">Költségkalkuláció</button>  
+            </p>
+        </div>  
+    </main>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
