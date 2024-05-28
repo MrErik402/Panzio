@@ -53,11 +53,11 @@
                 Vendégek életkora:
             </p>
             <p class="jobboldal">
-                <select name="fovalaszto" id="fovalaszto">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                <select name="fovalaszto" id="fovalaszto" onchange="Lezaras()">
+                    <option for="fovalaszto" value="1">1</option>
+                    <option for="fovalaszto" value="2">2</option>
+                    <option for="fovalaszto" value="3">3</option>
+                    <option for="fovalaszto" value="4">4</option>
                 </select> fő
                 <br>
                 <input type="text" name="fo1" id="fo1"> év
@@ -90,6 +90,8 @@
                 <label for="kulter">Kültéri medencék - 800 Ft/nap/fő</label><br>
                 <input type="checkbox" name="furdoszauna" id="szauna" value="800">
                 <label for="szauna">Szauna belépő - 800 Ft/nap/fő</label><br>
+                <input type="checkbox" name="furdteljes" id="teljes" value="800">
+                <label for="teljes">Teljes belépő - 2000 Ft/nap/fő</label>
                 
             </form>
             <hr>
