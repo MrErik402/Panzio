@@ -30,7 +30,7 @@ const ellatasTelj = document.getElementById("teljespanz");
 //SZOLGALTATAS
 
 const belteri = document.getElementById("belter");
-const kulteri  = document.getElementById("kulter");
+const kulteri = document.getElementById("kulter");
 const szauna = document.getElementById("szauna");
 const teljes = document.getElementById("teljes");
 
@@ -41,89 +41,89 @@ let szobaTulajdonsagok = [];
 
 //Kódban használt függvények
 
-function Szobameghatarozas(){
-    if(egyagyas.checked == true){
+function Szobameghatarozas() {
+    if (egyagyas.checked == true) {
         szobaTulajdonsagok.push(egyagyas);
         return "Egyágyas - 9.000 Ft/éj";
-       
+
     }
-    else if(ketagyas.checked == true){
+    else if (ketagyas.checked == true) {
         szobaTulajdonsagok.push(ketagyas);
         return "Kétágyas - 15.000 Ft/éj";
-        
+
     }
-    else if(ketagyegypot.checked == true){
+    else if (ketagyegypot.checked == true) {
         szobaTulajdonsagok.push(ketagyegypot);
         return "Kétágyas 1 pótággyal - 18.000 Ft/éj";
-        
+
     }
-    else{
+    else {
         szobaTulajdonsagok.push(ketagyketpot);
         return "Kétágyas 2 pótággyal - 21.000 Ft/éj";
-       
+
     }
 }
 
-function Ellatasmeghatarozas(){
-    if(ellatasReg.checked == true){
+function Ellatasmeghatarozas() {
+    if (ellatasReg.checked == true) {
         szobaTulajdonsagok.push(ellatasReg);
         return "Reggeli - 900 Ft/nap/fő";
-        
+
     }
-    else if(ellatasFelP.checked == true){
+    else if (ellatasFelP.checked == true) {
         szobaTulajdonsagok.push(ellatasFelP);
         return "Félpanzió - 2.900 Ft/nap/fő";
-        
+
     }
-    else{
+    else {
         szobaTulajdonsagok.push(ellatasTelj);
         return "Teljes panzíó - 4.900 Ft/nap/fő";
-        
+
     }
 }
 
-function Szolgaltatasmeghatarozas(){
+function Szolgaltatasmeghatarozas() {
     let belepo = "";
-    
-    if(belteri.checked == true){
+
+    if (belteri.checked == true) {
         belepo += "Beltéri medencék, ";
         mennyiseg.push(800);
     }
-    if(kulteri.checked == true){
+    if (kulteri.checked == true) {
         belepo += "Kültéri medencék, ";
         mennyiseg.push(800);
     }
-    if(szauna.checked == true){
+    if (szauna.checked == true) {
         belepo += "Szauna belépő, ";
         mennyiseg.push(800);
     }
-    if((belteri.checked && szauna.checked && kulteri.checked) || teljes.checked ){
+    if ((belteri.checked && szauna.checked && kulteri.checked) || teljes.checked) {
         belepo = "Teljes belépő";
     }
     return belepo
 
 }
 
-function OsszegSzamitas(napokSzama){
+function OsszegSzamitas(napokSzama) {
 
-    if(mennyiseg.length == 3){
-        return `${Number((napokSzama*szobaTulajdonsagok[0].value)+(napokSzama*erkezokSzama.value*szobaTulajdonsagok[1].value)+(napokSzama*erkezokSzama.value*2000))}`;
+    if (mennyiseg.length == 3) {
+        return `${Number((napokSzama * szobaTulajdonsagok[0].value) + (napokSzama * erkezokSzama.value * szobaTulajdonsagok[1].value) + (napokSzama * erkezokSzama.value * 2000))}`;
     }
-    else if(mennyiseg.length == 2){
-        return `${Number((napokSzama*szobaTulajdonsagok[0].value)+(napokSzama*erkezokSzama.value*szobaTulajdonsagok[1].value)+(napokSzama*erkezokSzama.value*1600))}`;
+    else if (mennyiseg.length == 2) {
+        return `${Number((napokSzama * szobaTulajdonsagok[0].value) + (napokSzama * erkezokSzama.value * szobaTulajdonsagok[1].value) + (napokSzama * erkezokSzama.value * 1600))}`;
     }
-    else if(mennyiseg.length == 1){
-        return `${Number((napokSzama*szobaTulajdonsagok[0].value)+(napokSzama*erkezokSzama.value*szobaTulajdonsagok[1].value)+(napokSzama*erkezokSzama.value*800))}`;
+    else if (mennyiseg.length == 1) {
+        return `${Number((napokSzama * szobaTulajdonsagok[0].value) + (napokSzama * erkezokSzama.value * szobaTulajdonsagok[1].value) + (napokSzama * erkezokSzama.value * 800))}`;
     }
-    else{
-        return `${Number((napokSzama*szobaTulajdonsagok[0].value)+(napokSzama*erkezokSzama.value*szobaTulajdonsagok[1].value))}`;
+    else {
+        return `${Number((napokSzama * szobaTulajdonsagok[0].value) + (napokSzama * erkezokSzama.value * szobaTulajdonsagok[1].value))}`;
     }
-    
+
 }
 
-function Osszegmeghatarozas(){
+function Osszegmeghatarozas() {
     let datum = Math.abs(new Date(tavozas.value) - new Date(erkezes.value));
-    let datumNap = Math.floor(datum / (1000*60*60*24)); //Nap meghatározása
+    let datumNap = Math.floor(datum / (1000 * 60 * 60 * 24)); //Nap meghatározása
     let osszeg = OsszegSzamitas(datumNap);
     return `${osszeg}`;
 
@@ -131,7 +131,7 @@ function Osszegmeghatarozas(){
 
 // Weboldalon meghívott függvények
 
-function Lezaras(){
+function Lezaras() {
 
     fo4.disabled = false;
     fo3.disabled = false;
@@ -139,23 +139,21 @@ function Lezaras(){
     fo1.disabled = false;
 
     const erkezokSzam = erkezokSzama.value;
-    if(erkezokSzam == 3)
-    {
+    if (erkezokSzam == 3) {
         fo4.disabled = true;
     }
-    else if(erkezokSzam == 2){
+    else if (erkezokSzam == 2) {
         fo4.disabled = true;
         fo3.disabled = true;
     }
-    else if(erkezokSzam == 1){
+    else if (erkezokSzam == 1) {
         fo4.disabled = true;
         fo3.disabled = true;
         fo2.disabled = true;
     }
 }
 
-
-function Koltsegszamitas(){
+function Koltsegszamitas() {
 
     mennyiseg = [];
     szobaTulajdonsagok = [];
@@ -163,64 +161,61 @@ function Koltsegszamitas(){
     const ellatas = Ellatasmeghatarozas();
     const igenyeltSzolg = Szolgaltatasmeghatarozas();
     const osszeg = Osszegmeghatarozas();
-    
-    if(Ellenorzes(szobaTulajdonsagok)){
-        alert(`Kedves vendégünk!\n\nTájékoztatjuk a sikeres foglalásról.\n\nÉrkezés: ${erkezes.value}\nTávozás: ${tavozas.value}\nSzoba típusa: ${szoba}\nVendégek száma: ${erkezokSzama.value} fő\nEllátás: ${ellatas}\nIgényelt szolgáltatások: ${igenyeltSzolg}\nA teljes összeg: ${Number(osszeg)} Ft.\n\nKöszönjük megrendelését!`)
-    }
-    else{
-        alert("Hiba történt az adatbevitelben!")
-    }
-    
+
+
+    alert(`Kedves vendégünk!\n\nTájékoztatjuk a sikeres foglalásról.\n\nÉrkezés: ${erkezes.value}\nTávozás: ${tavozas.value}\nSzoba típusa: ${szoba}\nVendégek száma: ${erkezokSzama.value} fő\nEllátás: ${ellatas}\nIgényelt szolgáltatások: ${igenyeltSzolg}\nA teljes összeg: ${Number(osszeg)} Ft.\n\nKöszönjük megrendelését!`)
+
 }
 
-// Ellenőrzés
+// Ellenőrzés - Elcsúszik az utolsó azaz a 177.-181. sorok között. Hiba jelenleg ismeretlen a megoldásán dolgozom.
 
-function Ellenorzes(szoba){
-    const korok = KorEllenorzes(); //Ha ez listaa
-    const potAgyak = PotagyEllenorzes(korok); //Ha ez "true"
-    if(potAgyak){
-        const potAgyKivalasztva = PotagyValasztasEllenorzes(potAgyak, szobaTulajdonsagok); //Igaz esetén helyesen van pótágy választva, hamis esetén helytelenül van pótágy választva! 
-        return false;
+function Ellenorzes(szoba) {
+    const korok = KorEllenorzes();
+    const potAgyak = PotagyEllenorzes(korok);
+    if (potAgyak) {
+        const potAgyKivalasztva = PotagyValasztasEllenorzes(potAgyak, szobaTulajdonsagok);
+        if (potAgyKivalasztva) {
+            return false;
+        }
     }
     return true;
-    
 }
 
-function KorEllenorzes(){ //MÜKSZIK
+function KorEllenorzes() { //MÜKSZIK
     let korLista = [];
     let szuksegesKorokSzama = erkezokSzama.value;
-    if(szuksegesKorokSzama == 4){
+    if (szuksegesKorokSzama == 4) {
         korLista.push(fo1.value);
         korLista.push(fo2.value);
         korLista.push(fo3.value);
         korLista.push(fo4.value);
     }
-    else if(szuksegesKorokSzama == 3){
+    else if (szuksegesKorokSzama == 3) {
         korLista.push(fo1.value);
         korLista.push(fo2.value);
         korLista.push(fo3.value);
     }
-    else if(szuksegesKorokSzama == 2){
+    else if (szuksegesKorokSzama == 2) {
         korLista.push(fo1.value);
         korLista.push(fo2.value);
     }
-    else{
+    else {
         korLista.push(fo1.value);
     }
     return korLista;
 }
 
-function PotagyEllenorzes(korok){
-    for(let i = 0; i<korok.length; i++){
-        if(korok[i] <= 16){
+function PotagyEllenorzes(korok) {
+    for (let i = 0; i < korok.length; i++) {
+        if (korok[i] <= 16) {
             return true;
         }
     }
     return false;
 }
 
-function PotagyValasztasEllenorzes(potAgyak, szobaTulajdonsagok){
-    if(potAgyak && (szobaTulajdonsagok[0] == "ketagyegypot" || szobaTulajdonsagok[0] == "ketagyketpot")){
+function PotagyValasztasEllenorzes(potAgyak, szobaTulajdonsagok) {
+    if (potAgyak && (szobaTulajdonsagok[0] == ketagyegypot || szobaTulajdonsagok[0] == ketagyketpot)) {
         return true;
     }
 }

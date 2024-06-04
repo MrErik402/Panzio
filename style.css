@@ -43,3 +43,9 @@ button{
         margin-left: 35%;
     }
 }
+@media screen and (max-width:430px) {
+    .jobboldal{
+        margin-left: 50%;
+    }
+}
+
