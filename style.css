@@ -1,9 +1,12 @@
 body{
-    color:blue;
+    color:black;
+    background-image: url(./img/backG.jpeg);
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 0.25px;
 }
 .baloldal{
     float: left;
-    margin-left: 20px;
+    margin-left: 15%;
 }
 .jobboldal{
     margin: 10px;
@@ -15,7 +18,9 @@ input[type="text"]
     width: 30px;
 }
 main{
-    background-color: gray;
+    background-color: #edd18290;
+    border-radius: 20px;
+    border: 5px #918153 solid ;
     margin: 0 auto;
     width: 75%;
 }
@@ -32,6 +37,14 @@ h1{
 }
 button{
     margin-bottom: 15px;
+    width: 30%;
+    height: 50%;
+    border-radius: 20px;
+    background-color: #edd182;
+}
+button:hover{
+    border-color: brown;
+    border-width: 2px;
 }
 @media screen and (max-width:650px) {
     main{
